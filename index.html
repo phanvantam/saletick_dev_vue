@@ -1,1 +1,114 @@
-<p>Noi dung</p>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Phan Tâm - Profile</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="/reset.css">
+	<link rel="stylesheet" type="text/css" href="/style.css">
+	
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+	<div class="page" id="site">
+		<div class="page-head">
+			<div class="inner">
+				<div>
+					<div class="avatar">
+						<img :src="info.avatar" />
+					</div>
+					<p class="fullname">{{ info.name }}</p>
+					<p class="sologan">{{ info.sologan }}</p>
+				</div>
+				<div class="contacts">
+					<span @click="checkShow('about')" class="item">
+						<span class="icon fa fa-user-circle-o"></span>
+						<p>ABOUT</p>
+					</span>
+					<span @click="checkShow('study')" class="item">
+						<span class="icon fa fa-graduation-cap"></span>
+						<p>STUDY</p>
+					</span>
+					<span @click="checkShow('product')" class="item">
+						<span class="icon fa fa-product-hunt"></span>
+						<p>PRODUCT</p>
+					</span>
+				</div>
+			</div>
+		</div>
+		<div class="page-body">
+			<div v-if="show.study" class="inner">
+				<div class="timeline">
+					<div class="info">
+						<div class="item">
+							{{ study[show_timeline].content }}
+						</div>
+					</div>
+					<div class="time">
+						<span @click="(show_timeline = show_timeline > 0 ? show_timeline - 1 : show_timeline)" :class="{back: 1, fa: 1, 'fa-hand-o-left': 1, off: show_timeline == 0}"></span>
+						<span class="value">{{ study[show_timeline].time }}</span>
+						<span @click="(show_timeline = show_timeline < study.length -1 ? show_timeline + 1 : show_timeline)" :class="{next: 1, fa: 1, 'fa-hand-o-right': 1, off: show_timeline >= (study.length-1)}"></span>
+					</div>
+				</div>
+				<ul class="skill">
+					<li v-for="item in language" class="item">
+						<span class="title">{{ item.name }}</span>
+						<span :class="('process lv-'+ item.lv)"></span>
+					</li>
+				</ul>
+			</div>
+			<div v-if="show.about" class="inner">
+				<div class="info">
+					<div class="item">
+						<span class="icon fa fa-envelope"></span>
+						<a :href="('mailto:'+ info.email)" class="value" target="_blank">{{ info.email }}</a>
+						<span class="label">Email</span>
+					</div>
+					<div class="item">
+						<span class="icon fa fa-phone"></span>
+						<a href="('tel:'+ info.phone)" class="value" target="_blank">{{ info.phone }}</a>
+						<span class="label">Phone - Viettel</span>
+					</div>
+					<div class="item">
+						<span class="icon fa fa-briefcase"></span>
+						<p class="value">{{ info.company }}</p>
+						<span class="label">Company</span>
+					</div>
+					<div class="item">
+						<span class="icon fa fa-briefcase"></span>
+						<p class="value">{{ info.position }}</p>
+						<!--<span class="label">Designer</span>-->
+					</div>
+					<div class="item">
+						<span class="icon fa fa-map-marker"></span>
+						<p class="value">{{ info.location }}</p>
+						<span class="label">Location</span>
+					</div>
+					<div class="item">
+						<span class="icon fa fa-github"></span>
+						<a :href="('https://'+ info.github)" target="__tblank" class="value">{{ info.github }}</a>
+						<span class="label">Github</span>
+					</div>
+					<div class="item">
+						<span class="icon fa fa-globe"></span>
+						<a :href="('http://'+ info.website)" target="__tblank" class="value">{{ info.website }}</a>
+						<span class="label">Website</span>
+					</div>
+				</div>
+			</div>
+			<div v-if="show.product" class="inner">
+				<div class="products">
+					<ul class="item" v-for="product in products">
+						<li v-for="item in product">
+							<span class="label">{{ item.label }}</span>
+							<span class="value" v-html="item.value"></span>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="main.js"></script>
+</body>
+</html>
