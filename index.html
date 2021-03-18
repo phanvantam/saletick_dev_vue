@@ -1,68 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile Ngô Sơn</title>
-    <link rel="stylesheet" type="text/css" href="/style.css">	
-    
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Profile Ngô Sơn</title>
+	<link rel="stylesheet" type="text/css" href="/style.css">
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
 </head>
+
 <body>
 	<!-- page profile -->
-    <div id="profile" class="page-profile">
+	<div id="profile" class="page-profile">
 		<!-- header -->
-        <div class="header">
-            <div class="content-head">
-                <div class="description">
-                    <div style="padding-top: 19px; border-radius: 50px;" class="avatar">
-                        <img 
-							width="95" 
-							height="95" 
-							src="avatar-1.jpg" 
-						/>
-                    </div>
+		<div class="header">
+			<div class="content-head">
+				<div class="description">
+					<div style="padding-top: 19px; border-radius: 50px;" class="avatar">
+						<img width="95" height="95" src="avatar-1.jpg" />
+					</div>
 					<!-- full name -->
-                    <p class="fullname">{{ info.fullname }}</p>
+					<p class="fullname">{{ info.fullname }}</p>
 					<!-- châm ngôn sống -->
-                    <p class="sologan">{{ info.sologan }}</p>
-                </div>
+					<p class="sologan">{{ info.sologan }}</p>
+				</div>
 				<!-- Kiểm tra hiển thị click -->
-                <div class="contact">
-                    <span 
-						@click="checkShow('about')" 
-						class="item"
-					>
-                        <span 
-							class="icon fa fa-user-circle-o">
+				<div class="contact">
+					<span @click="checkShow('about')" class="item">
+						<span class="icon fa fa-user-circle-o">
 						</span>
-                        <p class="text-botton">ABOUT</p>
-                    </span>
-                    <span 
-						@click="checkShow('study')" 
-						class="item"
-					>
-                        <span 
-							class="icon fa fa-graduation-cap">
+						<p class="text-botton">ABOUT</p>
+					</span>
+					<span @click="checkShow('study')" class="item">
+						<span class="icon fa fa-graduation-cap">
 						</span>
-                        <p class="text-botton">STUDY</p>
-                    </span>
-                    <span 
-						@click="checkShow('products')" 
-						class="item"
-					>
-                        <span class="icon fa fa-product-hunt"></span>
-                        <p class="text-botton">PRODUCTS</p>
-                    </span>
-                </div>
+						<p class="text-botton">STUDY</p>
+					</span>
+					<span @click="checkShow('products')" class="item">
+						<span class="icon fa fa-product-hunt"></span>
+						<p class="text-botton">PRODUCTS</p>
+					</span>
+				</div>
 				<!-- kết thúc click -->
-            </div>
-        </div>
+			</div>
+		</div>
 		<!-- end header -->
 		<!-- page-body-1 -->
-        <div class="page-body">
+		<div class="page-body">
 			<!-- show study -->
 			<div v-if="show.study" class="content-head">
 				<!-- check timeline -->
@@ -73,15 +59,13 @@
 						</div>
 					</div>
 					<div class="time">
-						<span 
-							@click="(show_timeline = show_timeline > 0 ? show_timeline - 1 : show_timeline)" 
+						<span @click="(show_timeline = show_timeline > 0 ? show_timeline - 1 : show_timeline)"
 							:class="{back: 1, fa: 1, 'fa-hand-o-left': 1, off: show_timeline == 0}">
 						</span>
-						<span 
-							class="value">{{ study[show_timeline].time }}
+						<span class="value">{{ study[show_timeline].time }}
 						</span>
-						<span 
-							@click="(show_timeline = show_timeline < study.length -1 ? show_timeline + 1 : show_timeline)" 
+						<span
+							@click="(show_timeline = show_timeline < study.length -1 ? show_timeline + 1 : show_timeline)"
 							:class="{next: 1, fa: 1, 'fa-hand-o-right': 1, off: show_timeline >= (study.length-1)}">
 						</span>
 					</div>
@@ -103,20 +87,14 @@
 					<div class="item">
 						<!-- link đến mail -->
 						<span class="icon fa fa-envelope"></span>
-						<a 
-							:href="('mailto:'+ info.email)" 
-							class="value" 
-							target="_self">{{ info.email }}
+						<a :href="('mailto:'+ info.email)" class="value" target="_self">{{ info.email }}
 						</a>
 						<span class="label">Email</span>
 					</div>
 					<div class="item">
 						<!-- Số điện thaoij liên hệ -->
 						<span class="icon fa fa-phone"></span>
-						<a 
-							href="tel:0392999601" 
-							class="value" 
-							target="_self">{{ info.phone }}
+						<a href="tel:0392999601" class="value" target="_self">{{ info.phone }}
 						</a>
 						<span class="label">Phone - Viettel</span>
 					</div>
@@ -140,20 +118,14 @@
 					<!-- kho lưu chữ github -->
 					<div class="item">
 						<span class="icon fa fa-github"></span>
-						<a 
-							:href="('https://'+ info.github)" 
-							target="__self" 
-							class="value">{{ info.github }}
+						<a :href="('https://'+ info.github)" target="__self" class="value">{{ info.github }}
 						</a>
 						<span class="label">Github</span>
 					</div>
 					<!-- sản phẩm website đã hoàn thành -->
 					<div class="item">
 						<span class="icon fa fa-globe"></span>
-						<a 
-							:href="('http://'+ info.website)" 
-							target="__self" 
-							class="value">{{ info.website }}
+						<a :href="('http://'+ info.website)" target="__self" class="value">{{ info.website }}
 						</a>
 						<span class="label">Website</span>
 					</div>
@@ -165,12 +137,9 @@
 				<div class="products">
 					<ul class="item" v-for="product in products">
 						<li v-for="item in product">
-							<span 
-								class="label">{{ item.label }}
+							<span class="label">{{ item.label }}
 							</span>
-							<span 
-								class="value" 
-								v-html="item.value">
+							<span class="value" v-html="item.value">
 							</span>
 						</li>
 					</ul>
@@ -187,91 +156,56 @@
 					<!-- Thay đổi email -->
 					<div class="item">
 						<span class="icon fa fa-envelope"></span>
-						<input
-							id="email"
-							class="input-form" 
-							type="email" 
-							:value="info.email"
-							@input="info.email = $event.target.value"
-						>
+						<input id="email" class="input-form" type="email" :value="info.email"
+							@input="info.email = $event.target.value">
 						<br>
 						<span class="label">Thay đổi Email</span>
 					</div>
 					<!-- Thay đổi số điện thoại -->
 					<div class="item">
 						<span class="icon fa fa-phone"></span>
-						<input
-							id="phone"
-							class="input-form" 
-							type="number" 
-							:value="info.phone"
-							@input="info.phone = $event.target.value"
-						>
+						<input id="phone" class="input-form" type="number" :value="info.phone"
+							@input="info.phone = $event.target.value">
 						<br>
 						<span class="label">Thay đổi số điện thoại</span>
 					</div>
 					<!-- thay đổi tên công ty -->
 					<div class="item">
 						<span class="icon fa fa-briefcase"></span>
-						<input
-							id="company"
-							class="input-form" 
-							type="text" 
-							:value="info.company"
-							@input="info.company = $event.target.value"
-						>
+						<input id="company" class="input-form" type="text" :value="info.company"
+							@input="info.company = $event.target.value">
 						<br>
 						<span class="label">Thay đổi tên công ty</span>
 					</div>
 					<!-- Thay đổi vị trí làm việc -->
 					<div class="item">
 						<span class="icon fa fa-briefcase"></span>
-						<input
-							id="position"
-							class="input-form" 
-							type="text" 
-							:value="info.position"
-							@input="info.position = $event.target.value"
-						>
+						<input id="position" class="input-form" type="text" :value="info.position"
+							@input="info.position = $event.target.value">
 						<br>
 						<span class="label">Thay đổi vị trí làm việc</span>
 					</div>
 					<!-- Thay đổi Thay đổi địa chỉ công ty -->
 					<div class="item">
 						<span class="icon fa fa-map-marker"></span>
-						<input
-							id="location"
-							class="input-form" 
-							type="text" 
-							:value="info.location"
-							@input="info.location = $event.target.value"
-						>
+						<input id="location" class="input-form" type="text" :value="info.location"
+							@input="info.location = $event.target.value">
 						<br>
 						<span class="label">Thay đổi địa chỉ công ty </span>
 					</div>
 					<!-- Thay đổi kho lưu trữ github -->
 					<div class="item">
 						<span class="icon fa fa-github"></span>
-						<input
-							id="github"
-							class="input-form" 
-							type="text" 
-							:value="info.github"
-							@input="info.github = $event.target.value"
-						>
+						<input id="github" class="input-form" type="text" :value="info.github"
+							@input="info.github = $event.target.value">
 						<br>
 						<span class="label">Thay đổi kho lưu trữ github</span>
 					</div>
 					<!-- Thay đừng link dẫn tới dự án đã hoàn thành -->
 					<div class="item">
 						<span class="icon fa fa-globe"></span>
-						<input
-							id="website"
-							class="input-form" 
-							type="text" 
-							:value="info.website"
-							@input="info.website = $event.target.value"
-						>
+						<input id="website" class="input-form" type="text" :value="info.website"
+							@input="info.website = $event.target.value">
 						<br>
 						<span class="label">Thay đừng link dẫn tới dự án đã hoàn thành</span>
 					</div>
@@ -280,8 +214,9 @@
 			<!-- end show about -->
 		</div>
 		<!-- end page-body-2 -->
-    </div>
+	</div>
 	<!-- end page profile -->
-    <script type="text/javascript" src="main.js"></script>
+	<script type="text/javascript" src="main.js"></script>
 </body>
+
 </html>

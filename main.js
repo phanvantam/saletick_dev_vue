@@ -20,7 +20,7 @@ var app = new Vue({
 			github: 'github.com/ngoson919597'
 		},
 		// Working Language
-		language: [
+		language: [ 
 			{name: 'php', lv: 2},
 			{name: 'laravel', lv: 2},
 			{name: 'Mysql - SQL', lv: 2},
