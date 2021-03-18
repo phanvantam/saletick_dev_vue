@@ -1,18 +1,21 @@
+/* body */
 body{
 	margin: 0;
     color: #82848f;
     font-size: 14px;
-    line-height: 1;
-    font-family: 'Maison Neue', sans-serif;
+    line-height: 1.5;
+    font-family: 'roboto', sans-serif;
     font-style: normal;
     font-weight: 400;
 }
-.page-head{
-	height: 360px;
-    background: linear-gradient(45deg, rgb(241, 133, 104) 0%, rgb(241, 133, 104) 1%, rgb(192, 62, 74) 100%);
+/* header */
+.header{
+	height: 350px;
+    background-image: linear-gradient(purple, pink);
     position: relative;
 }
-.page-head>.inner{
+/* .content-head */
+.header>.content-head{
     width: 570px;
     position: absolute;
     bottom: 0;
@@ -20,112 +23,107 @@ body{
     left: 0;
     right: 0;
     text-align: center;
-    box-shadow: 0 -5px 40px 7px rgba(0,0,0,0.08);
+    box-shadow: 0 -5px 40px 7px rgba(245, 5, 5, 0.08);
 }
-.page-head>.inner .avatar>img{
-	height: 95px;
-    width: 95px;
-    border-radius: 50%;
-    margin-top: 50px;
-}
-.page-head>.inner .fullname{
-	margin: 20px 0;
+/* full name */
+.header>.content-head .fullname {
+    margin: 20px 0;
     font-weight: 400;
     color: #fffefe !important;
     font-size: 1.5em;
 }
-.page-head>.inner .sologan{
-	padding: 0 0 25px 0;
+/* sologan */
+.header>.content-head .sologan {
     color: #fff;
     font-weight: 300;
-    line-height: 1.4;
+    line-height: 1.5;
+    padding: 0 0 25px 0;
     margin: 0 auto;
     opacity: 0.75;
     font-size: 13px;
 }
-.page-head>.inner .contacts{
-	display: flex;
-	border-top: 1px solid rgb(241, 125, 93);
+/* contact */
+.header>.content-head .contact {
+    display: flex;
+    border-top: 1px solid rgb(83, 24, 190);
 }
-.page-head>.inner .contacts p{
-    padding: 8px 0;
-}
-.page-head>.inner .contacts>.item{
-	width: 33%;
+/* icon */
+.header>.content-head .contact>.item {
     display: inline-block;
+    height: 40px;
+    width: 33%;
     text-transform: uppercase;
     font-size: 11px;
     color: #fffefe !important;
     text-decoration: unset;
-    border-left: 1px solid rgb(241, 125, 93);
+    border-left: 1px solid rgb(83, 24, 190);
     position: relative;
-    padding-top: 30px;
-	cursor: pointer;
+    padding-top: 10px;
+
+    cursor: pointer;
 }
-.page-head>.inner .contacts>.itemnth-child(1){
-	border-left: unset;
-	width: 34%;
-}
-.page-head>.inner .contacts>.itemhover{
-	background: #d25655;
-}
-.page-head>.inner .contacts>.item>.icon{
-	color: #fffefe;
+.header>.content-head .contact>.item>.icon {
+    color: #fffefe;
     position: absolute;
-    font-size: 24px;
-    top: 8px;
+    font-size: 23px;
+    top: 5px;
     left: 0;
-	right: 0;
+    right: 0;
+}
+.text-botton{
+    padding-top: 10px;
 }
 .page-body{
 	position: relative;
 	height: 500px;
 }
-.page-body>.inner .timeline{
+/* page-1-2 timeline */
+.page-body>.content-head .timeline{
     padding: 20px 60px;
 }
-.page-body>.inner .timeline>.info{
+.page-body>.content-head .timeline>.info{
     margin-bottom: 25px;
-    border: 1px dashed #d0d0d0;
+    border: 2px solid #d0d0d0;
     padding: 20px;
     border-radius: 2px;
     line-height: 20px;
 }
-.page-body>.inner .timeline>.time{
+.page-body>.content-head .timeline>.time{
     text-align: center;
     position: relative;
 }
-.page-body>.inner .timeline>.time .value{
-    font-weight: 600;
+.page-body>.content-head .timeline>.time .value{
+    font-weight: 550;
 }
-.page-body>.inner .timeline>.time .next,
-.page-body>.inner .timeline>.time .back{
+.page-body>.content-head .timeline>.time .next,
+.page-body>.content-head .timeline>.time .back{
     font-size: 20px;
     cursor: pointer;
 }
-.page-body>.inner .timeline>.time .next.off,
-.page-body>.inner .timeline>.time .back.off{
+.page-body>.content-head .timeline>.time .next.off,
+.page-body>.content-head .timeline>.time .back.off{
     color: #eee;
 }
-.page-body>.inner .timeline>.time .back{
+.page-body>.content-head .timeline>.time .back{
 	margin-right: 40px;
 }
-.page-body>.inner .timeline>.time .next{
+.page-body>.content-head .timeline>.time .next{
 	margin-left: 40px; 
 }
-.page-body>.inner .skill{
+/* skill */
+.page-body>.content-head .skill{
 	padding: 20px 60px;
 }
-.page-body>.inner .skill>.item{
+.page-body>.content-head .skill>.item{
     padding: 10px 0;
 }
-.page-body>.inner .skill>.item>.title{
+.page-body>.content-head .skill>.item>.title{
     font-size: 15px;
     display: inline-block;
     font-weight: 600;
     text-transform: uppercase;
 }
-.page-body>.inner .skill>.item>.process{
+.page-body>.content-head .skill>.item>.process{
     display: inline-block;
     float: right;
     background: #d0d0d0;
@@ -136,52 +134,52 @@ body{
 	overflow: hidden;
 	box-shadow: 0 -5px 40px 7px rgba(0,0,0,0.08);
 }
-.page-body>.inner .skill>.item>.process:before{
+.page-body>.content-head .skill>.item>.process:before{
 	content: '';
 	height: 100%;
 	background: #d05454;
 	position: absolute;
 	left: 0;
 }
-.page-body>.inner .skill>.item>.process.lv-1:before{
+.page-body>.content-head .skill>.item>.process.lv-1:before{
 	width: 20%;
 }
-.page-body>.inner .skill>.item>.process.lv-2:before{
+.page-body>.content-head .skill>.item>.process.lv-2:before{
 	width: 40%;
 }
-.page-body>.inner .skill>.item>.process.lv-3:before{
+.page-body>.content-head .skill>.item>.process.lv-3:before{
 	width: 60%;
 }
-.page-body>.inner .skill>.item>.process.lv-4:before{
+.page-body>.content-head .skill>.item>.process.lv-4:before{
 	width: 80%;
 }
-.page-body>.inner .products{
+/* product */
+.page-body>.content-head .products{
     padding: 29px;
 }
-.page-body>.inner .products .item{
-    border-bottom: 1px dashed #afafaf;
+.page-body>.content-head .products .item{
     margin-bottom: 15px;
 }
-.page-body>.inner .products .item>li{
+.page-body>.content-head .products .item>li{
     padding: 10px;
     position: relative;
     padding-left: 120px;
 }
-.page-body>.inner .products .item>li .label{
+.page-body>.content-head .products .item>li .label{
     font-weight: 600;
     position: absolute;
     display: inline-block;
     left: 10px;
 }
-.page-body>.inner .products .item>li .value{
+.page-body>.content-head .products .item>li .value{
     font-size: 13px;
     line-height: 18px;
 }
-.page-body>.inner .products .item>li .value a{
+.page-body>.content-head .products .item>li .value a{
     font-weight: 600;
     color: #554db5;
 }
-.page-body>.inner{
+.page-body>.content-head{
 	box-shadow: 0 -5px 40px 7px rgba(0,0,0,0.08);
     width: 570px;
     position: absolute;
@@ -189,16 +187,16 @@ body{
     right: 0;
     margin: auto;
 }
-.page-body>.inner>.info{
+.page-body>.content-head>.info{
 	padding: 20px 60px;
 	margin-left: 65px;
 }
-.page-body>.inner>.info>.item{
+.page-body>.content-head>.info>.item{
 	border-bottom: 1px solid #eee;
 	padding: 18px 0;
 	position: relative;
 }
-.page-body>.inner>.info>.item>.value{
+.page-body>.content-head>.info>.item>.value{
 	margin: 0;
     padding-bottom: 5px;
     color: #2b2b2b;
@@ -206,25 +204,25 @@ body{
     display: block;
     text-decoration: unset;
 }
-.page-body>.inner>.info>.item>.label{
+.page-body>.content-head>.info>.item>.label{
 	font-size: 13px;
 }
-.page-body>.inner>.info>.item>.icon{
+.page-body>.content-head>.info>.item>.icon{
 	font-size: 26px;
     position: absolute;
     left: -50px;
     color: #afafaf;
 }
-.page-body>.inner>.social{
+.page-body>.content-head>.social{
 	padding: 0px 60px;
 	margin-left: 65px;
 	margin-bottom: 20px;
 }
-.page-body>.inner>.social>.title{
+.page-body>.content-head>.social>.title{
 	margin: 10px 0px 20px 0;
 	font-size: 16px;
 }
-.page-body>.inner>.social a{
+.page-body>.content-head>.social a{
 	position: relative;
 	width: 40px;
     border-radius: 50%;
@@ -232,22 +230,22 @@ body{
     height: 40px;
     margin-right: 15px;
 }
-.page-body>.inner>.social a .icon{
+.page-body>.content-head>.social a .icon{
 	position: absolute;
 }
-.page-body>.inner>.social a.fb{
+.page-body>.content-head>.social a.fb{
     background: #554DB5;
 }
-.page-body>.inner>.social a.fb .icon{
+.page-body>.content-head>.social a.fb .icon{
     font-size: 22px;
     left: 13px;
     top: 10px;
     color: #fff;
 }
-.page-head,
+.header,
 .page-body,
-.page-head>.inner, 
-.page-body>.inner{
+.header>.content-head, 
+.page-body>.content-head{
 	min-width: 400px;
 }
 .page-body{
@@ -280,11 +278,11 @@ body{
 	position: relative;
 }
 @media only screen and (max-width: 768px) {
-	.page-head>.inner, 
-	.page-body>.inner{
+	.header>.content-head, 
+	.page-body>.content-head{
 		width: 100%;
 	}
-	.page-head{
+	.header{
 	    height: 315px;
 	}
 }

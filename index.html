@@ -1,44 +1,49 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title>Phan Tâm - Profile</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width,initial-scale=1">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link rel="stylesheet" type="text/css" href="/reset.css">
-	<link rel="stylesheet" type="text/css" href="/style.css">
-	
-	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Ngô Sơn</title>
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
 </head>
 <body>
-	<div class="page" id="site">
-		<div class="page-head">
-			<div class="inner">
-				<div>
-					<div class="avatar">
-						<img :src="info.avatar" />
-					</div>
-					<p class="fullname">{{ info.name }}</p>
-					<p class="sologan">{{ info.sologan }}</p>
-				</div>
-				<div class="contacts">
-					<span @click="checkShow('about')" class="item">
-						<span class="icon fa fa-user-circle-o"></span>
-						<p>ABOUT</p>
-					</span>
-					<span @click="checkShow('study')" class="item">
-						<span class="icon fa fa-graduation-cap"></span>
-						<p>STUDY</p>
-					</span>
-					<span @click="checkShow('product')" class="item">
-						<span class="icon fa fa-product-hunt"></span>
-						<p>PRODUCT</p>
-					</span>
-				</div>
-			</div>
-		</div>
-		<div class="page-body">
-			<div v-if="show.study" class="inner">
+	<!-- page profile -->
+    <div id="profile" class="page-profile">
+		<!-- header -->
+        <div class="header">
+            <div class="content-head">
+                <div class="description">
+                    <div style="padding-top: 19px; border-radius: 50px;" class="avatar">
+                        <img width="95" height="95" src="avatar-1.jpg" />
+                    </div>
+                    <p class="fullname">{{ info.fullname }}</p>
+                    <p class="sologan">{{ info.sologan }}</p>
+                </div>
+                <div class="contact">
+                    <span @click="checkShow('about')" class="item">
+                        <span class="icon fa fa-user-circle-o"></span>
+                        <p class="text-botton">ABOUT</p>
+                    </span>
+                    <span @click="checkShow('study')" class="item">
+                        <span class="icon fa fa-graduation-cap"></span>
+                        <p class="text-botton">STUDY</p>
+                    </span>
+                    <span @click="checkShow('products')" class="item">
+                        <span class="icon fa fa-product-hunt"></span>
+                        <p class="text-botton">PRODUCTS</p>
+                    </span>
+                </div>
+            </div>
+        </div>
+		<!-- end header -->
+        <div class="page-body">
+			<!-- show study -->
+			<div v-if="show.study" class="content-head">
+				<!-- check timeline -->
 				<div class="timeline">
 					<div class="info">
 						<div class="item">
@@ -51,23 +56,28 @@
 						<span @click="(show_timeline = show_timeline < study.length -1 ? show_timeline + 1 : show_timeline)" :class="{next: 1, fa: 1, 'fa-hand-o-right': 1, off: show_timeline >= (study.length-1)}"></span>
 					</div>
 				</div>
+				<!-- end check time line -->
+				<!-- skill year -->
 				<ul class="skill">
 					<li v-for="item in language" class="item">
 						<span class="title">{{ item.name }}</span>
 						<span :class="('process lv-'+ item.lv)"></span>
 					</li>
 				</ul>
+				<!-- end skill year -->
 			</div>
-			<div v-if="show.about" class="inner">
+			<!-- end show study -->
+			<!-- show about -->
+			<div v-if="show.about" class="content-head">
 				<div class="info">
 					<div class="item">
 						<span class="icon fa fa-envelope"></span>
-						<a :href="('mailto:'+ info.email)" class="value" target="_blank">{{ info.email }}</a>
+						<a :href="('mailto:'+ info.email)" class="value" target="_self">{{ info.email }}</a>
 						<span class="label">Email</span>
 					</div>
 					<div class="item">
 						<span class="icon fa fa-phone"></span>
-						<a href="('tel:'+ info.phone)" class="value" target="_blank">{{ info.phone }}</a>
+						<a href="tel:0392999601" class="value" target="_self">{{ info.phone }}</a>
 						<span class="label">Phone - Viettel</span>
 					</div>
 					<div class="item">
@@ -78,7 +88,6 @@
 					<div class="item">
 						<span class="icon fa fa-briefcase"></span>
 						<p class="value">{{ info.position }}</p>
-						<!--<span class="label">Designer</span>-->
 					</div>
 					<div class="item">
 						<span class="icon fa fa-map-marker"></span>
@@ -87,17 +96,19 @@
 					</div>
 					<div class="item">
 						<span class="icon fa fa-github"></span>
-						<a :href="('https://'+ info.github)" target="__tblank" class="value">{{ info.github }}</a>
+						<a :href="('https://'+ info.github)" target="__self" class="value">{{ info.github }}</a>
 						<span class="label">Github</span>
 					</div>
 					<div class="item">
 						<span class="icon fa fa-globe"></span>
-						<a :href="('http://'+ info.website)" target="__tblank" class="value">{{ info.website }}</a>
+						<a :href="('http://'+ info.website)" target="__self" class="value">{{ info.website }}</a>
 						<span class="label">Website</span>
 					</div>
 				</div>
 			</div>
-			<div v-if="show.product" class="inner">
+			<!-- end show about -->
+			<!-- show product -->
+			<div v-if="show.products" class="content-head">
 				<div class="products">
 					<ul class="item" v-for="product in products">
 						<li v-for="item in product">
@@ -107,8 +118,10 @@
 					</ul>
 				</div>
 			</div>
+			<!-- end show product -->
 		</div>
-	</div>
-	<script type="text/javascript" src="main.js"></script>
+    </div>
+	<!-- end page profile -->
+    <script type="text/javascript" src="main.js"></script>
 </body>
 </html>
