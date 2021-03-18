@@ -6,6 +6,7 @@ var app = new Vue({
 			study: false,
 			product: false
 		},
+		// Personal information
 		info: {
 			avatar: "",
 			fullname: 'NGÔ HỒNG SƠN',
@@ -18,6 +19,7 @@ var app = new Vue({
 			website: 'livefb.vn',
 			github: 'github.com/ngoson919597'
 		},
+		// Working Language
 		language: [
 			{name: 'php', lv: 2},
 			{name: 'laravel', lv: 2},
@@ -29,6 +31,7 @@ var app = new Vue({
 			{name: 'Git', lv: 2},
 		],
 		show_timeline: 0,
+		// academic level
 		study: [
 			{
 				time: '3/2019 - 6/2020',
@@ -39,6 +42,7 @@ var app = new Vue({
 				content: 'Lập trình viên web Front-end, Back-End tại công ty cổ phần Vteckhome'
 			}
 		],
+		// product(sản phẩm đang có)
 		products: [
 			[
 				{
@@ -51,7 +55,7 @@ var app = new Vue({
 				},
 				{
 					label: 'Vai trò',
-					value: '- Phát triển module <br />+ Quản lý sản phẩm <br />+ Chia gói dịch vụ, phân quyền user <br />+ Các tác vụ tài khoản(Log in/up ...) <br />- Phát triển front-end <br />- Tìm hiểu và kết nối API với các sàn TMĐT'
+					value: '- Phát triển module <br />+ Quản lý sản phẩm <br />+ Chia gói dịch vụ, <br />+ Các tác vụ tài khoản(Log in/up ...) <br />- Phát triển front-end <br />- Tìm hiểu và kết nối API với các sàn TMĐT'
 				},
 				{
 					label: 'Công nghệ',	
@@ -64,6 +68,7 @@ var app = new Vue({
 			]
 		]
 	},
+	//  Kiểm tra hiển thị các modules
     methods: {
 		checkShow(type) {
 			for(let k in this.show) {

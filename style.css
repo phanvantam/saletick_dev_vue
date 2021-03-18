@@ -62,6 +62,7 @@ body{
 
     cursor: pointer;
 }
+/* icon contact */
 .header>.content-head .contact>.item>.icon {
     color: #fffefe;
     position: absolute;
@@ -70,17 +71,21 @@ body{
     left: 0;
     right: 0;
 }
+/* định dạng của text contact */
 .text-botton{
     padding-top: 10px;
 }
+/* chiều cao của page-body chỉ định các div trên 1 dòng*/
 .page-body{
 	position: relative;
 	height: 500px;
+    display: inline-block;
 }
 /* page-1-2 timeline */
 .page-body>.content-head .timeline{
     padding: 20px 60px;
 }
+/* Khung timeline */
 .page-body>.content-head .timeline>.info{
     margin-bottom: 25px;
     border: 2px solid #d0d0d0;
@@ -88,41 +93,50 @@ body{
     border-radius: 2px;
     line-height: 20px;
 }
+/* hiển thị priview and next */
 .page-body>.content-head .timeline>.time{
     text-align: center;
     position: relative;
 }
+/* kích cỡ chữ  */
 .page-body>.content-head .timeline>.time .value{
     font-weight: 550;
 }
+/* kích cỡ và con chuột trỏ vào tiếp theo và quay lại */
 .page-body>.content-head .timeline>.time .next,
 .page-body>.content-head .timeline>.time .back{
     font-size: 20px;
     cursor: pointer;
 }
+/* kiểm tra nếu đã nhấn next thì hiển thị con trỏ mầu trắng và ngược lại */
 .page-body>.content-head .timeline>.time .next.off,
 .page-body>.content-head .timeline>.time .back.off{
     color: #eee;
 }
+/* con trỏ privew cách phải */
 .page-body>.content-head .timeline>.time .back{
 	margin-right: 40px;
 }
+/* con trỏ tiếp theo cách trái */
 .page-body>.content-head .timeline>.time .next{
 	margin-left: 40px; 
 }
-/* skill */
+/* skill kinh nghiệm cách đều trái trên */
 .page-body>.content-head .skill{
 	padding: 20px 60px;
 }
+/* icon kinh nghiệm cách đều trái */
 .page-body>.content-head .skill>.item{
     padding: 10px 0;
 }
+/* tiêu đề kinh nghiệm */
 .page-body>.content-head .skill>.item>.title{
     font-size: 15px;
     display: inline-block;
     font-weight: 600;
     text-transform: uppercase;
 }
+/* Quá trình kinh nghiệm làm việc */
 .page-body>.content-head .skill>.item>.process{
     display: inline-block;
     float: right;
@@ -134,6 +148,7 @@ body{
 	overflow: hidden;
 	box-shadow: 0 -5px 40px 7px rgba(0,0,0,0.08);
 }
+/* Quá trình kinh nghiệm làm việc trước */
 .page-body>.content-head .skill>.item>.process:before{
 	content: '';
 	height: 100%;
@@ -141,15 +156,19 @@ body{
 	position: absolute;
 	left: 0;
 }
+/* lv1 rộng 20% */
 .page-body>.content-head .skill>.item>.process.lv-1:before{
 	width: 20%;
 }
+/* lv2 rộng 40% */
 .page-body>.content-head .skill>.item>.process.lv-2:before{
 	width: 40%;
 }
+/* lv3 rộng 60% */
 .page-body>.content-head .skill>.item>.process.lv-3:before{
 	width: 60%;
 }
+/* lv 4 rộng 80% */
 .page-body>.content-head .skill>.item>.process.lv-4:before{
 	width: 80%;
 }
@@ -157,45 +176,53 @@ body{
 .page-body>.content-head .products{
     padding: 29px;
 }
+/* item sản phẩm cách dưới 15px */
 .page-body>.content-head .products .item{
     margin-bottom: 15px;
 }
+/* khối li cách đều vị trí bình thường 10px, cách trái 120px */
 .page-body>.content-head .products .item>li{
     padding: 10px;
     position: relative;
     padding-left: 120px;
 }
+/* nhãn */
 .page-body>.content-head .products .item>li .label{
     font-weight: 600;
     position: absolute;
     display: inline-block;
     left: 10px;
 }
+/* kích thước giá trị trả về */
 .page-body>.content-head .products .item>li .value{
     font-size: 13px;
     line-height: 18px;
 }
+/* kích thước và giá trị trả về của text phần mềm (product) */
 .page-body>.content-head .products .item>li .value a{
     font-weight: 600;
     color: #554db5;
 }
+/* đổ bóng content-head */
 .page-body>.content-head{
 	box-shadow: 0 -5px 40px 7px rgba(0,0,0,0.08);
     width: 570px;
     position: absolute;
+    float: left;
     left: 0;
-    right: 0;
-    margin: auto;
 }
+/* tổng quan info about */
 .page-body>.content-head>.info{
 	padding: 20px 60px;
 	margin-left: 65px;
 }
+/* viền item */
 .page-body>.content-head>.info>.item{
 	border-bottom: 1px solid #eee;
 	padding: 18px 0;
 	position: relative;
 }
+/* mầu giá trị item */
 .page-body>.content-head>.info>.item>.value{
 	margin: 0;
     padding-bottom: 5px;
@@ -204,84 +231,110 @@ body{
     display: block;
     text-decoration: unset;
 }
+/* font label */
 .page-body>.content-head>.info>.item>.label{
 	font-size: 13px;
 }
+/* giá trị kích thước icon info */
 .page-body>.content-head>.info>.item>.icon{
 	font-size: 26px;
     position: absolute;
     left: -50px;
     color: #afafaf;
 }
-.page-body>.content-head>.social{
-	padding: 0px 60px;
-	margin-left: 65px;
-	margin-bottom: 20px;
-}
-.page-body>.content-head>.social>.title{
-	margin: 10px 0px 20px 0;
-	font-size: 16px;
-}
-.page-body>.content-head>.social a{
-	position: relative;
-	width: 40px;
-    border-radius: 50%;
-    display: inline-block;
-    height: 40px;
-    margin-right: 15px;
-}
-.page-body>.content-head>.social a .icon{
-	position: absolute;
-}
-.page-body>.content-head>.social a.fb{
-    background: #554DB5;
-}
-.page-body>.content-head>.social a.fb .icon{
-    font-size: 22px;
-    left: 13px;
-    top: 10px;
-    color: #fff;
-}
+/* độ rộng tối thiểu content-head*/
 .header,
 .page-body,
 .header>.content-head, 
 .page-body>.content-head{
-	min-width: 400px;
+	min-width: 350px;
 }
-.page-body{
+.page-body {
+    margin-bottom: 40px;
+    margin-left: 14%;
+}
+/* end content-head */
+/* content-head-form */
+/* css input form */
+.input-form{
+    width: 100%;
+    height: 30px;
+    border-radius: 10px;
+    text-align: center;
+}
+/* form-1 cách top */
+.page-body-1>.content-head-form{
+    top: 0;
+    margin-top: 350px;
+}
+/* đổ bóng content-head-form */
+.page-body-1>.content-head-form{
+	box-shadow: 0 -5px 40px 7px rgba(0,0,0,0.08);
+    width: 600px;
+    position: absolute;
+    float: right;
+    right: 0;
+}
+/*content-head-form cách phải,cách dưới */
+.content-head-form {
+    margin-right: 12%;
     margin-bottom: 40px;
 }
-.page-body .download-contact {
-	text-align: center;
-	margin-top: 25px;
-	margin-bottom: 40px;
+/* tổng quan info about page-body-1 */
+.page-body-1>.content-head-form>.info{
+	padding: 20px 60px;
+	margin-left: 65px;
 }
-.page-body .download-contact .icon{
-    font-size: 20px;
-    position: absolute;
-    left: 28px;
-    top: 10px;
-}
-.page-body .download-contact a{
-    text-decoration: unset;
-    display: inline-block;
-	text-align: center;
-	background: rgb(86, 87, 127);
-	padding: 15px 20px;
-	font-size: 14px;
-	font-weight: 500;
-	box-shadow: 0px 10px 14.1px 0.9px rgba(0,0,0,0.24), 0px 4px 19.6px 0.4px rgba(0,0,0,0.16);
-	text-transform: uppercase;
-	color: #fff;
-	border-radius: 2px;
-    padding-left: 60px;
+/* viền item ,cách dều 18*/
+.page-body-1>.content-head-form>.info>.item{
+	border-bottom: 1px solid #eee;
+	padding: 18px 0;
 	position: relative;
 }
+/* mầu giá trị item page-body-1 */
+.page-body-1>.content-head-form>.info>.item>.value{
+	margin: 0;
+    padding-bottom: 5px;
+    color: #2b2b2b;
+    line-height: 20px;
+    display: block;
+    text-decoration: unset;
+}
+/* kích cỡ chữ label page-body-1 */
+.page-body-1>.content-head-form>.info>.item>.label{
+	font-size: 13px;
+}
+/* giá trị kích thước icon info page-body-1 */
+.page-body-1>.content-head-form>.info>.item>.icon{
+	font-size: 26px;
+    position: absolute;
+    left: -50px;
+    color: #afafaf;
+}
+/* độ rộng tối thiểu content-head page-body-1*/
+.header,
+.page-body-1,
+.header>.content-head-form, 
+.page-body-1>.content-head-form{
+	min-width: 400px;
+}
+/* end content-head-form*/
 @media only screen and (max-width: 768px) {
 	.header>.content-head, 
 	.page-body>.content-head{
 		width: 100%;
 	}
+	.header{
+	    height: 315px;
+	}
+}
+/* màn hình 768px */
+@media only screen and (max-width: 768px) {
+	.header>.content-head-form, 
+	.page-body-1>.content-head-form{
+		width: 100%;
+	}
+    /* độ cao màn hình max-width */
 	.header{
 	    height: 315px;
 	}
