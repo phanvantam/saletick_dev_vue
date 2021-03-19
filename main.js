@@ -6,6 +6,7 @@ var app = new Vue({
 			study: false,
 			product: false
 		},
+		dataupdate: 'xin chao',
 		// Personal information
 		info: {
 			avatar: "",

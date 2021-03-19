@@ -16,8 +16,11 @@
 	<div id="profile" class="page-profile">
 		<!-- header -->
 		<div class="header">
+			<!-- nội dung chung header -->
 			<div class="content-head">
+				<!-- miêu tả chi tiết -->
 				<div class="description">
+					<!-- image ảnh đại diện -->
 					<div style="padding-top: 19px; border-radius: 50px;" class="avatar">
 						<img width="95" height="95" src="avatar-1.jpg" />
 					</div>
@@ -43,7 +46,7 @@
 						<p class="text-botton">PRODUCTS</p>
 					</span>
 				</div>
-				<!-- kết thúc click -->
+				<!-- kết thúc kiểm tra click -->
 			</div>
 		</div>
 		<!-- end header -->
@@ -54,10 +57,12 @@
 				<!-- check timeline -->
 				<div class="timeline">
 					<div class="info">
+						<!-- nội dung công việc đã làm -->
 						<div class="item">
 							{{ study[show_timeline].content }}
 						</div>
 					</div>
+					<!-- kiểm tra preview and next công việc đã làm -->
 					<div class="time">
 						<span @click="(show_timeline = show_timeline > 0 ? show_timeline - 1 : show_timeline)"
 							:class="{back: 1, fa: 1, 'fa-hand-o-left': 1, off: show_timeline == 0}">
@@ -69,6 +74,7 @@
 							:class="{next: 1, fa: 1, 'fa-hand-o-right': 1, off: show_timeline >= (study.length-1)}">
 						</span>
 					</div>
+					<!--Kết thúc kiểm tra preview and next công việc đã làm -->
 				</div>
 				<!-- end check time line -->
 				<!-- skill year -->
@@ -156,58 +162,51 @@
 					<!-- Thay đổi email -->
 					<div class="item">
 						<span class="icon fa fa-envelope"></span>
-						<input id="email" class="input-form" type="email" :value="info.email"
-							@input="info.email = $event.target.value">
+						<input v-model="info.email" id="email" class="input-form" type="email" placeholder="nhập email">
 						<br>
 						<span class="label">Thay đổi Email</span>
 					</div>
 					<!-- Thay đổi số điện thoại -->
 					<div class="item">
 						<span class="icon fa fa-phone"></span>
-						<input id="phone" class="input-form" type="number" :value="info.phone"
-							@input="info.phone = $event.target.value">
+						<input v-model="info.phone" id="position" class="input-form" type="number" placeholder="nhập số điện thoại">
 						<br>
 						<span class="label">Thay đổi số điện thoại</span>
 					</div>
 					<!-- thay đổi tên công ty -->
 					<div class="item">
 						<span class="icon fa fa-briefcase"></span>
-						<input id="company" class="input-form" type="text" :value="info.company"
-							@input="info.company = $event.target.value">
+						<input v-model="info.company" id="company" class="input-form" type="text" placeholder="nhập tên công ty">
 						<br>
 						<span class="label">Thay đổi tên công ty</span>
 					</div>
 					<!-- Thay đổi vị trí làm việc -->
 					<div class="item">
 						<span class="icon fa fa-briefcase"></span>
-						<input id="position" class="input-form" type="text" :value="info.position"
-							@input="info.position = $event.target.value">
+						<input v-model="info.position" id="position" class="input-form" type="text" placeholder="nhập vị trí làm việc">
 						<br>
 						<span class="label">Thay đổi vị trí làm việc</span>
 					</div>
 					<!-- Thay đổi Thay đổi địa chỉ công ty -->
 					<div class="item">
 						<span class="icon fa fa-map-marker"></span>
-						<input id="location" class="input-form" type="text" :value="info.location"
-							@input="info.location = $event.target.value">
+						<input id="location" class="input-form" v-model="info.location" type="text" placeholder="Nhập đị chỉ">
 						<br>
-						<span class="label">Thay đổi địa chỉ công ty </span>
+						<span class="label">Thay đổi địa chỉ công ty</span>
 					</div>
 					<!-- Thay đổi kho lưu trữ github -->
 					<div class="item">
 						<span class="icon fa fa-github"></span>
-						<input id="github" class="input-form" type="text" :value="info.github"
-							@input="info.github = $event.target.value">
+						<input v-model="info.github" id="github" class="input-form" type="text" placeholder="nhập Kho lưu trữ bằng link">
 						<br>
 						<span class="label">Thay đổi kho lưu trữ github</span>
 					</div>
 					<!-- Thay đừng link dẫn tới dự án đã hoàn thành -->
 					<div class="item">
 						<span class="icon fa fa-globe"></span>
-						<input id="website" class="input-form" type="text" :value="info.website"
-							@input="info.website = $event.target.value">
+						<input v-model="info.website" id="website" class="input-form" type="text" placeholder="nhập Website">
 						<br>
-						<span class="label">Thay đừng link dẫn tới dự án đã hoàn thành</span>
+						<span class="label">Thay đổi đường link dẫn tới dự án đã hoàn thành</span>
 					</div>
 				</div>
 			</div>
@@ -218,5 +217,4 @@
 	<!-- end page profile -->
 	<script type="text/javascript" src="main.js"></script>
 </body>
-
 </html>
